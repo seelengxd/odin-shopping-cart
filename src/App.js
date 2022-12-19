@@ -4,19 +4,19 @@ import Shop from "./components/Shop";
 import Home from "./components/Home";
 import { store } from "./redux/store";
 import { Provider } from "react-redux";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 
 function App() {
   return (
     <Provider store={store}>
-      <BrowserRouter>
+      <HashRouter>
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
       <Sidebar />
     </Provider>
   );
