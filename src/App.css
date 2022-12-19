@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 nav {
   background-color: rgb(21, 51, 61);
   color: white;
@@ -11,6 +17,10 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+nav + div {
+  flex: 1;
 }
 
 a {
@@ -21,4 +31,61 @@ a {
 nav > button {
   padding: 10px 20px;
   border-radius: 20px;
+}
+
+#home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+}
+
+#home > h1 {
+  font-size: 5rem;
+  text-align: center;
+}
+
+#home > h1 > span {
+  animation: 3s change-color forwards;
+}
+
+@keyframes change-color {
+  from {
+    background-color: white;
+  }
+
+  to {
+    background-color: black;
+    color: white;
+    font-style: italic;
+  }
+}
+
+#home button {
+  background: linear-gradient(to right, #1e40af 50%, #2563eb 50%) right;
+  background-size: 200% 100%;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 5px 5px 5px #aaa;
+  transition: all 2s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+#home button:hover {
+  background-position: left;
+  scale: 1.2;
+}
+
+button > img {
+  filter: invert(92%) sepia(100%) saturate(0%) hue-rotate(202deg)
+    brightness(106%) contrast(106%);
+  height: 2rem;
 }
