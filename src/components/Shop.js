@@ -7,7 +7,7 @@ function Shop() {
     <div>
       <div className="container">
         {cart.map((item) => (
-          <ItemCard item={item} />
+          <ItemCard item={item} key={item.id} />
         ))}
       </div>
     </div>

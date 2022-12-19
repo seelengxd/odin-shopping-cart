@@ -135,3 +135,36 @@ nav button {
   font-size: 1.5rem;
   cursor: pointer;
 }
+
+#sidebar {
+  background-color: black;
+  width: 500px;
+  height: 100vh;
+  position: absolute;
+  right: 0;
+  opacity: 0.5;
+  animation: slide-in 2s forwards;
+}
+
+#sidebar.hidden {
+  right: -500px;
+  animation: slide-out 2s forwards;
+}
+
+@keyframes slide-in {
+  from {
+    right: -500px;
+  }
+  to {
+    right: 0;
+  }
+}
+
+@keyframes slide-out {
+  from {
+    right: 0;
+  }
+  to {
+    right: -500px;
+  }
+}
