@@ -124,3 +124,14 @@ button > img {
 .item-card > img {
   width: 100%;
 }
+
+nav button {
+  color: white;
+  background-color: #5b21b6;
+  border: none;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
