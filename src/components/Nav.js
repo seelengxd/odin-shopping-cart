@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import shoppingCart from "../assets/cart.svg";
-import { toggleSidebar } from "../redux/cartSlice";
+import { unhideSidebar } from "../redux/cartSlice";
 
 function Nav() {
   const cart = useSelector((state) => state.cart.cart);
@@ -13,8 +13,8 @@ function Nav() {
         <h1>Shopping Cart</h1>
       </Link>
       <Link to="/shop">Shop</Link>
-      <button onClick={() => dispatch(toggleSidebar())}>
-        <img src={shoppingCart} /> {itemCount}
+      <button onClick={() => dispatch(unhideSidebar())}>
+        <img src={shoppingCart} alt="shopping cart" /> {itemCount}
       </button>
     </nav>
   );

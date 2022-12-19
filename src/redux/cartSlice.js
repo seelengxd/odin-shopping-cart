@@ -4,6 +4,7 @@ import yellowShirt from "../assets/yellow.png";
 import greenShirt from "../assets/green.png";
 
 const initialState = {
+  sidebarEverShown: false,
   showSidebar: false,
   cart: [
     {
@@ -38,13 +39,18 @@ export const cartSlice = createSlice({
       const { id, change } = action.payload;
       state.cart.filter((item) => item.id === id)[0].quantity += change;
     },
-    toggleSidebar: (state) => {
-      state.showSidebar = !state.showSidebar;
+    unhideSidebar: (state) => {
+      state.showSidebar = true;
+      state.sidebarEverShown = true;
+    },
+
+    hideSidebar: (state) => {
+      state.showSidebar = false;
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { modify, toggleSidebar } = cartSlice.actions;
+export const { modify, unhideSidebar, hideSidebar } = cartSlice.actions;
 
 export default cartSlice.reducer;

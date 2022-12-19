@@ -6,9 +6,9 @@ function ItemCard({ item }) {
   return (
     <div className="item-card">
       <p>
-        {item.name} (${item.price})
+        {item.name} (${item.price.toFixed(2)})
       </p>
-      <img src={item.src} />
+      <img src={item.src} alt={item.name} />
       <button onClick={() => dispatch(modify({ id: item.id, change: 1 }))}>
         +
       </button>

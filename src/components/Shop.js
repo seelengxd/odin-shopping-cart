@@ -1,5 +1,5 @@
 import ItemCard from "./ItemCard";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 function Shop() {
   const cart = useSelector((state) => state.cart.cart);
